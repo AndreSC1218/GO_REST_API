@@ -4,16 +4,14 @@ import (
 	"net/http"
 
 	"github.com/gorilla/mux"
-)
 
-func HomeHandler(w http.ResponseWriter, r *http.Request) {
-	w.Write([]byte("HELLO WORLD"))
-}
+	"github.com/AndreSC1218/GO_REST_API/routes"
+)
 
 func main() {
 	router := mux.NewRouter()
 
-	router.HandleFunc("/", HomeHandler)
+	router.HandleFunc("/", routes.HomeHandler)
 
 	http.ListenAndServe(":3000", router)
 }
